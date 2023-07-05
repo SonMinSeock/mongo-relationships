@@ -51,4 +51,6 @@ const addProduct = async () => {
   console.log(farm);
 };
 
-addProduct();
+Farm.findOne({ name: "Full Belly Farms" })
+  .populate("products")
+  .then((data) => console.log(data));
